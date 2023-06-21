@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import { MainContainer, AddItemButtom, MoveableParent } from "./styled";
 
 import MoveableItem from "../MoveableItem";
 
@@ -43,9 +42,9 @@ const MoveableContainer = () => {
   };
 
   return (
-    <MainContainer>
-      <AddItemButtom onClick={handleAddMoveable}>Add Moveable</AddItemButtom>
-      <MoveableParent id="parent">
+    <div className="mainContainer">
+      <button className="addItemButtom" onClick={handleAddMoveable}>Add Moveable</button>
+      <div className="moveableParent" id="parent">
         {moveableComponents.map((item, index) => (
           <MoveableItem
             {...item}
@@ -55,8 +54,8 @@ const MoveableContainer = () => {
             removeItem={handleRemoveItem}
           />
         ))}
-      </MoveableParent>
-    </MainContainer>
+      </div>
+    </div>
   );
 };
 
