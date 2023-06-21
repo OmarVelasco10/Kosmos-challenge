@@ -9,6 +9,7 @@ const MoveableContainer = () => {
   const [selected, setSelected] = useState(null);
   const [images, setImages] = useState([]);
 
+  // This useEffects gets the images when the component is mount
   useEffect(() => {
     const getImages = async () => {
       const response = await fetch(
@@ -20,6 +21,7 @@ const MoveableContainer = () => {
     getImages().then((response) => setImages(response));
   }, []);
 
+//This function adds a Movable component and assigns the images randomly
   const handleAddMoveable = () => {
     setMoveableComponents([
       ...moveableComponents,
@@ -34,6 +36,7 @@ const MoveableContainer = () => {
     ]);
   };
 
+  //This function remove the item from the list and from the DOM
   const handleRemoveItem = (id) => {
     const itemsFiltered = moveableComponents.filter((item) => item.id !== id);
     setMoveableComponents(itemsFiltered);

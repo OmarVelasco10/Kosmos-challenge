@@ -84,7 +84,7 @@ const MoveableItem = ({
         }}
         onClick={() => setSelected(id)}
       />
-
+      {/*I added different library properties, these are described further in the documentation.*/}
       <Moveable
         target={isSelected && ref.current}
         ables={[RemoveButton]}
